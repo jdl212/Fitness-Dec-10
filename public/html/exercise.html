@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+ 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
+      
+  <link rel="stylesheet" href="/css/style.css" />
+  <title>Fitness Tracker</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-info">
+    <a class="navbar-brand" href="/"><b>Fitness Tracker</b></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/stats">Dashboard</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+  <div class="wrapper">
+      <div class="col-12 offset-5">
+        <div class="row">
+          <h1 class="text-center mt-5 mb-5" >Fitness Tracker</h1>
+        </div>
+       </div>
+     <div class="card exercise ">
+      <div class="raised card m-auto col-6 offset-2">
+        <h2>Add Your Exercise</h2>
+        <form action="POST" class="form">
+          <div class="form-row">
+            <div class="form-group col-12">
+              <label for="type">Exercise Type:</label>
+              <select name="type" id="type" class="form-control">
+                <option disabled selected>Select Exercise Type</option>
+                <option value="resistance">Resistance</option>
+                <option value="cardio">Cardio</option>
+              </select>
+            </div>
+            <div class="cardio-form d-none form-row col-12">
+              <div class="cardio-name form-group col-12">
+                <label for="cardio-name">Name:</label>
+                <input type="text" class="form-control" name="cardio-name" id="cardio-name" placeholder="Running" />
+              </div>
+              <div class="distance form-group col-6">
+                <label for="distance">Distance (miles):</label>
+                <input type="number" class="form-control" name="distance" id="distance" placeholder="5" />
+              </div>
+              <div class="duration form-group col-6">
+                <label for="duration">Duration (minutes):</label>
+                <input type="number" class="form-control" name="duration" id="duration" placeholder="10" />
+              </div>
+            </div>  
+          <div class="resistance-form d-none form-row col-12">
+            <div class="exercise form-group col-12">
+              <label for="name">Exercise Name:</label>
+              <input type="text" class="form-control" name="name" id="name" placeholder="Bench Press" />
+            </div>
+            <div class="weight form-group col-6">
+              <label for="weight">Weight (lbs):</label>
+              <input type="number"  class="form-control" name="weight" id="weight" placeholder="200" />
+            </div>
+            <div class="sets form-group col-6">
+              <label for="sets">Sets:</label>
+              <input type="number" class="form-control" name="sets" id="sets" placeholder="4" />
+            </div>
+            <div class="reps form-group col-6">
+              <label for="reps">Reps:</label>
+              <input type="number" class="form-control" name="reps" id="reps" placeholder="10" />
+            </div>
+            <div class="resistance-duration form-group col-6">
+              <label for="resistance-duration">Duration (minutes):</label>
+              <input type="number" class="form-control" name="resistance-duration" id="resistance-duration" placeholder="10" />
+            </div>
+          </div>
+          <div class="btn-group col-12" role="group">
+            <button disabled class="btn-lg btn-info button-complete btn-block">
+              Complete
+            </button>
+            <button disabled class="btn-lg btn-success button-add-another btn-block m-0">
+              Add Exercise
+            </button>
+          </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div id="toast">
+    Workout Added Successfully!
+  </div>
+  <script src="/js/api.js"></script>
+  <script src="/js/exercise.js"></script>
+</body>
+
+</html>
